@@ -1,0 +1,38 @@
+{
+  "name": "kumsalagency/payment",
+  "description": " Laravel Payment Gateway Package",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Kumsal Ajans",
+      "email": "developer@kumsalajans.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "KumsalAgency\\Payment\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=7.4",
+    "illuminate/http": "~5.8.0|^6.0|^7.0",
+    "guzzlehttp/guzzle": "^7.0",
+    "spatie/array-to-xml": "^2.13",
+    "ext-soap": "*"
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.x-dev"
+    },
+    "laravel": {
+      "providers": [
+        "KumsalAgency\\Payment\\PaymentServiceProvider"
+      ],
+      "aliases": {
+        "Payment": "KumsalAgency\\Payment\\Facades\\Payment"
+      }
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
