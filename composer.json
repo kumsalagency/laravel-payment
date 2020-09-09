@@ -18,7 +18,9 @@
     "illuminate/http": "~5.8.0|^6.0|^7.0",
     "guzzlehttp/guzzle": "^6.0|^7.0",
     "spatie/array-to-xml": "^2.13",
-    "ext-soap": "*"
+    "ext-soap": "*",
+    "ext-json": "*",
+    "ext-simplexml": "*"
   },
   "extra": {
     "branch-alias": {
