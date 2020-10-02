@@ -78,7 +78,7 @@ abstract class PaymentGateway
     /**
      * @var string
      */
-    public string $environment = 'production';
+    public string $environment;
 
     /**
      * PaymentGateway constructor.
