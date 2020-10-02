@@ -36,7 +36,11 @@ class PaymentServiceProvider extends ServiceProvider
 
         $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'payment');
 
-        $this->registerPublishing();
+        if ($this->app->runningInConsole()) {
+            $this->registerPublishing();
+        }
+
+        $this->registerResources();
     }
 
     /**
@@ -53,6 +57,16 @@ class PaymentServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../resources/lang' => resource_path('lang/vendor/payment'),
         ], 'payment-lang');
+    }
+
+    /**
+     * Register the package resources such as routes, templates, etc.
+     *
+     * @return void
+     */
+    protected function registerResources()
+    {
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'payment');
     }
 
     /**
