@@ -81,6 +81,11 @@ abstract class PaymentGateway
     public string $environment;
 
     /**
+     * @var string
+     */
+    public string $currency;
+
+    /**
      * PaymentGateway constructor.
      * @param Application $application
      * @param array $config
@@ -243,6 +248,17 @@ abstract class PaymentGateway
     {
         return tap($this, function ($payment) use ($environment) {
             return $this->environment = $environment;
+        });
+    }
+
+    /**
+     * @param string $currency
+     * @return $this
+     */
+    public function setCurrency(string $currency): PaymentGateway
+    {
+        return tap($this, function ($payment) use ($currency) {
+            return $this->currency = $currency;
         });
     }
 
