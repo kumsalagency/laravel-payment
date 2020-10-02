@@ -76,6 +76,11 @@ abstract class PaymentGateway
     public ?string $cardType;
 
     /**
+     * @var string
+     */
+    public string $environment = 'production';
+
+    /**
      * PaymentGateway constructor.
      * @param Application $application
      * @param array $config
@@ -83,6 +88,8 @@ abstract class PaymentGateway
     public function __construct(Application $application,array $config)
     {
         $this->config = $config;
+
+        $this->environment = $this->config['environment'] ?? 'production';
     }
 
     /**
@@ -225,6 +232,17 @@ abstract class PaymentGateway
     {
         return tap($this, function ($payment) use ($cardType) {
             return $this->cardType = $cardType;
+        });
+    }
+
+    /**
+     * @param string $environment
+     * @return $this
+     */
+    public function setEnvironment(string $environment): PaymentGateway
+    {
+        return tap($this, function ($payment) use ($environment) {
+            return $this->environment = $environment;
         });
     }
 
