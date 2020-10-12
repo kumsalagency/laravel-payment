@@ -30,6 +30,17 @@ return [
             'three_d_base_url'      => 'https://boa.kuveytturk.com.tr',
             'collection_base_url'   => 'https://boa.kuveytturk.com.tr/BOA.Integration.WCFService/BOA.Integration.VirtualPos/VirtualPosService.svc?wsdl',
         ],
+
+        'yapikredi' => [
+            'client_id'         => '',
+            'terminal_id'       => '',
+            'posnet_id'         => '',
+            'username'          => '',
+            'password'          => '',
+            'store_key'         => '',
+            'promotion_code'    => '',
+            'base_url'          => 'https://www.posnet.ykb.com',
+        ],
     ],
 
 ];

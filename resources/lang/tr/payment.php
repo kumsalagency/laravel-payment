@@ -14,5 +14,15 @@ return [
             'InvalidCardExpireDateFormat' => 'Kart son kullanım tarihini ay ve yıl olarak (AA / YY formatında) giriniz.',
             'PosMerchantIPError' => 'IP adresi tanımlı değildir.',
         ],
+    ],
+    'yapikredi'=> [
+        'messages' => [
+            'mdStatus' => [
+                '0' => 'İşleme izin verilmedi',
+            ],
+        ],
+    ],
+    'buttons' => [
+        'redirect' => 'Yönlendir',
     ]
 ];
